@@ -19,7 +19,6 @@ private:
 
     void displayBoard();
 
-    // Nowe funkcje pomocnicze po rozbiciu
     void displayColumnHeader(int cellWidth, int labelWidth);
     void displayHorizontalLine(int labelWidth);
     void displayRow(int row, int labelWidth);
@@ -31,6 +30,8 @@ private:
     bool makeMove(int row, int col, wchar_t player);
 
     int minimax(int depth, int alpha, int beta, bool maximizing);
+    int maximize(int depth, int alpha, int beta);
+    int minimize(int depth, int alpha, int beta);
 
     void computerMove();
     int evaluate();
@@ -43,4 +44,4 @@ public:
     void play();
 };
 
-#endif // TICTACTOE_H
+#endif 

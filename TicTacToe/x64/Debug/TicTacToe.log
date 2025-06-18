@@ -1,7 +1,5 @@
-﻿  main.cpp
-  TicTacToe.cpp
+﻿  TicTacToe.cpp
 C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\TicTacToe.cpp(41,47): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
-  Generowanie kodu...
   TicTacToe.vcxproj -> C:\Users\Kamil\source\repos\TicTacToe\x64\Debug\TicTacToe.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

@@ -57,16 +57,14 @@ void TicTacToe::displayBoard() {
 bool TicTacToe::isWin(wchar_t player) {
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j <= size - win_condition; ++j) {
-            if (checkLine(player, i, j, 0, 1) || checkLine(player, j, i, 1, 0)) {
-                return true;
-            }
+            if (checkLine(player, i, j, 0, 1)) return true;
+            if (checkLine(player, j, i, 1, 0)) return true;
         }
     }
     for (int i = 0; i <= size - win_condition; ++i) {
         for (int j = 0; j <= size - win_condition; ++j) {
-            if (checkLine(player, i, j, 1, 1) || checkLine(player, i, j + win_condition - 1, 1, -1)) {
-                return true;
-            }
+            if (checkLine(player, i, j, 1, 1)) return true;
+            if (checkLine(player, i, j + win_condition - 1, 1, -1)) return true;
         }
     }
     return false;
@@ -83,45 +81,56 @@ bool TicTacToe::checkLine(wchar_t player, int start_row, int start_col, int row_
 
 bool TicTacToe::isDraw() {
     for (const auto& row : board) {
-        for (const auto& cell : row) {
-            if (cell == L' ') {
-                return false;
-            }
+        if (std::any_of(row.begin(), row.end(), [](wchar_t cell) { return cell == L' '; })) {
+            return false;
         }
     }
     return true;
 }
 
 bool TicTacToe::makeMove(int row, int col, wchar_t player) {
-    row--;
-    col--;
+    --row; --col;
+
     if (row < 0 || row >= size || col < 0 || col >= size || board[row][col] != L' ') {
         return false;
     }
+
     board[row][col] = player;
     return true;
 }
 
 int TicTacToe::evaluate() {
     int score = 0;
-    for (int i = 0; i < size; ++i) {
-        for (int j = 0; j <= size - win_condition; ++j) {
+    int i = 0;
+
+    while (i < size) {
+        int j = 0;
+        while (j <= size - win_condition) {
             score += evaluateLine(computer_player, i, j, 0, 1);
             score -= evaluateLine(human_player, i, j, 0, 1);
             score += evaluateLine(computer_player, j, i, 1, 0);
             score -= evaluateLine(human_player, j, i, 1, 0);
+            ++j;
         }
+        ++i;
     }
-    for (int i = 0; i <= size - win_condition; ++i) {
-        for (int j = 0; j <= size - win_condition; ++j) {
+
+    i = 0;
+    while (i <= size - win_condition) {
+        int j = 0;
+        while (j <= size - win_condition) {
             score += evaluateLine(computer_player, i, j, 1, 1);
             score -= evaluateLine(human_player, i, j, 1, 1);
             score += evaluateLine(computer_player, i, j + win_condition - 1, 1, -1);
             score -= evaluateLine(human_player, i, j + win_condition - 1, 1, -1);
+            ++j;
         }
+        ++i;
     }
+
     return score;
 }
+
 
 int TicTacToe::evaluateLine(wchar_t player, int start_row, int start_col, int row_dir, int col_dir) {
     int player_count = 0;
@@ -140,54 +149,59 @@ int TicTacToe::evaluateLine(wchar_t player, int start_row, int start_col, int ro
 }
 
 int TicTacToe::minimax(int depth, int alpha, int beta, bool maximizing) {
-    int score = evaluate();
     if (isWin(computer_player)) return 10 - depth;
     if (isWin(human_player)) return depth - 10;
     if (isDraw()) return 0;
-    if (depth >= max_depth) return score;
+    if (depth >= max_depth) return evaluate();
 
-    if (maximizing) {
-        int best = std::numeric_limits<int>::min();
-        for (int i = 0; i < size; ++i) {
-            for (int j = 0; j < size; ++j) {
-                if (board[i][j] == L' ') {
-                    board[i][j] = computer_player;
-                    best = std::max(best, minimax(depth + 1, alpha, beta, false));
-                    board[i][j] = L' ';
-                    alpha = std::max(alpha, best);
-                    if (beta <= alpha) break;
-                }
-            }
-        }
-        return best;
-    }
-    else {
-        int best = std::numeric_limits<int>::max();
-        for (int i = 0; i < size; ++i) {
-            for (int j = 0; j < size; ++j) {
-                if (board[i][j] == L' ') {
-                    board[i][j] = human_player;
-                    best = std::min(best, minimax(depth + 1, alpha, beta, true));
-                    board[i][j] = L' ';
-                    beta = std::min(beta, best);
-                    if (beta <= alpha) break;
-                }
-            }
-        }
-        return best;
-    }
+    if (maximizing) return maximize(depth, alpha, beta);
+    else return minimize(depth, alpha, beta);
 }
 
-void TicTacToe::computerMove() {
-    int best_score = std::numeric_limits<int>::min();
-    int move_row = -1, move_col = -1;
-
+int TicTacToe::maximize(int depth, int alpha, int beta) {
+    int best = std::numeric_limits<int>::min();
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
             if (board[i][j] == L' ') {
                 board[i][j] = computer_player;
+                best = std::max(best, minimax(depth + 1, alpha, beta, false));
+                board[i][j] = L' ';
+                alpha = std::max(alpha, best);
+                if (beta <= alpha) return best;
+            }
+        }
+    }
+    return best;
+}
+
+int TicTacToe::minimize(int depth, int alpha, int beta) {
+    int best = std::numeric_limits<int>::max();
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            if (board[i][j] == L' ') {
+                board[i][j] = human_player;
+                best = std::min(best, minimax(depth + 1, alpha, beta, true));
+                board[i][j] = L' ';
+                beta = std::min(beta, best);
+                if (beta <= alpha) return best;
+            }
+        }
+    }
+    return best;
+}
+
+void TicTacToe::computerMove() {
+    int best_score = std::numeric_limits<int>::min();
+    int move_row = -1;
+    int move_col = -1;
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            if (board[i][j] == L' ') {
+                board[i][j] = computer_player;
                 int score = minimax(0, std::numeric_limits<int>::min(), std::numeric_limits<int>::max(), false);
                 board[i][j] = L' ';
+
                 if (score > best_score) {
                     best_score = score;
                     move_row = i;
@@ -196,7 +210,10 @@ void TicTacToe::computerMove() {
             }
         }
     }
-    makeMove(move_row + 1, move_col + 1, computer_player);
+
+    if (move_row != -1 && move_col != -1) {
+        makeMove(move_row + 1, move_col + 1, computer_player);
+    }
 }
 
 void TicTacToe::play() {

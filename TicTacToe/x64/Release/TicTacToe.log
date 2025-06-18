@@ -1,51 +1,11 @@
-﻿  TicTacToe.cpp
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\TicTacToe.cpp(33,47): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\TicTacToe.cpp(43,47): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\TicTacToe.cpp(52,47): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
-  main.cpp
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(9,14): error C2039: „wcout”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(9,20): error C2065: "wcout": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(10,27): error C2039: „wcin”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(10,31): error C2065: "wcin": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(11,29): error C2079: "iss" używa niezdefiniowanego class "std::basic_istringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>"
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(11,38): error C2440: "inicjowanie": nie można konwertować z "std::wstring" na "int"
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(11,32): message : Nie jest dostępny żaden operator konwersji zdefiniowany przez użytkownika, który mógłby wykonać tę konwersję lub operator nie może zostać wywołany
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(14,18): error C2039: „wcout”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(14,24): error C2065: "wcout": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(19,17): error C2677: dwuargumentowy ">>": nie znaleziono żadnego globalnego operatora, który przyjmuje typ "std::wstring" (lub nie istnieje akceptowalna konwersja)
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(20,18): error C2039: „wcout”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(20,24): error C2065: "wcout": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(27,14): error C2039: „wcout”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(27,20): error C2065: "wcout": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(28,27): error C2039: „wcin”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(28,31): error C2065: "wcin": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(29,29): error C2079: "iss_win" używa niezdefiniowanego class "std::basic_istringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>"
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(29,42): error C2440: "inicjowanie": nie można konwertować z "std::wstring" na "int"
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(29,36): message : Nie jest dostępny żaden operator konwersji zdefiniowany przez użytkownika, który mógłby wykonać tę konwersję lub operator nie może zostać wywołany
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(32,18): error C2039: „wcout”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(32,24): error C2065: "wcout": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(37,18): error C2039: „wcout”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(37,24): error C2065: "wcout": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(43,10): error C2039: „wcout”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(43,16): error C2065: "wcout": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(45,23): error C2039: „wcin”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(45,27): error C2065: "wcin": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(46,25): error C2079: "iss_choice" używa niezdefiniowanego class "std::basic_istringstream<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>"
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(46,41): error C2440: "inicjowanie": nie można konwertować z "std::wstring" na "int"
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(46,35): message : Nie jest dostępny żaden operator konwersji zdefiniowany przez użytkownika, który mógłby wykonać tę konwersję lub operator nie może zostać wywołany
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(49,14): error C2039: „wcout”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(49,20): error C2065: "wcout": niezadeklarowany identyfikator
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(50,27): error C2039: „wcin”: nie jest składową elementu „std”
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\string(24): message : zobacz deklarację „std”
-C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\main.cpp(50,31): error C2065: "wcin": niezadeklarowany identyfikator
+﻿  main.cpp
+  TicTacToe.cpp
+C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\TicTacToe.cpp(41,47): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+  Trwa generowanie kodu
+  36 of 270 functions (13.3%) were compiled, the rest were copied from previous compilation.
+    14 functions were new in current compilation
+    15 functions had inline decision re-evaluated but remain unchanged
+  Zakończono generowanie kodu
+  TicTacToe.vcxproj -> C:\Users\Kamil\source\repos\TicTacToe\x64\Release\TicTacToe.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

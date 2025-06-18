@@ -80,9 +80,11 @@ bool TicTacToe::checkLine(wchar_t player, int start_row, int start_col, int row_
 }
 
 bool TicTacToe::isDraw() {
-    for (const auto& row : board) {
-        if (std::any_of(row.begin(), row.end(), [](wchar_t cell) { return cell == L' '; })) {
-            return false;
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            if (board[i][j] == L' ') {
+                return false;
+            }
         }
     }
     return true;

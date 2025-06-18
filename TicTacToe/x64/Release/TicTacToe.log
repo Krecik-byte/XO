@@ -1,10 +1,9 @@
-﻿  main.cpp
-  TicTacToe.cpp
+﻿  TicTacToe.cpp
 C:\Users\Kamil\source\repos\TicTacToe\TicTacToe\TicTacToe.cpp(41,47): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
   Trwa generowanie kodu
-  36 of 270 functions (13.3%) were compiled, the rest were copied from previous compilation.
-    14 functions were new in current compilation
-    15 functions had inline decision re-evaluated but remain unchanged
+  4 of 258 functions ( 1.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    17 functions had inline decision re-evaluated but remain unchanged
   Zakończono generowanie kodu
   TicTacToe.vcxproj -> C:\Users\Kamil\source\repos\TicTacToe\x64\Release\TicTacToe.exe
   'pwsh.exe' is not recognized as an internal or external command,
